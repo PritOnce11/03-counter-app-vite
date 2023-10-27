@@ -1,16 +1,28 @@
+import PropTypes from 'prop-types';
 
-const newMessage = {
-    message: 'Hola Mundo',
-    title: 'Fernando'
-};
+export const FirstApp = ( {title, subTitle, name} ) => {
 
-export const FirstApp = () => {
+    
 
     return (
         <>
-            <h1>Hola Mundo</h1>
+            <h1>{title}</h1>
             {/* <code>{ JSON.stringify(newMessage) }</code> */}
-            <p>Soy un subtitulo</p>
+            <p>{ subTitle }</p>
+            <p>{ name }</p>
         </>
     )
+}
+
+
+
+FirstApp.propTypes = {
+    title: PropTypes.string.isRequired,
+    subTitle: PropTypes.string
+}
+
+FirstApp.defaultProps = {
+    name: "Prit Once",
+    subTitle: "No hay subtitulo",
+    title: "No hay titulo"
 }
